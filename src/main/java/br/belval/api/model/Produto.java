@@ -5,6 +5,9 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Column;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,13 +19,35 @@ import jakarta.persistence.Id;
 @Entity
 public class Produto {
 	
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+    
 	private String nome;
+	
 	private String descricao;
+	
 	private BigDecimal preco;//valores decimais como 12.34
-	private LocalDateTime dataCriacao;
+	
+	private LocalDateTime dataCriacao;*/
+	
+	
+	  	@Id
+	  	@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Integer id;
+		
+		@Column(name = "nome", nullable = false, length = 100)
+		private String nome;
+		
+		@Column(name = "descricao", length = 500)
+		private String descricao;
+		
+		@Column(name = "preco", nullable = false, precision = 10, scale = 2)
+		private BigDecimal preco;//valores decimais como 12.34
+		
+		@Column(name = "data_criacao")
+		private LocalDateTime dataCriacao;
+	
 	
 	/**
 	 * Precisamos criar:
@@ -63,7 +88,7 @@ public class Produto {
 	
 	//Método que define/altera o valor do atributo id
 	public void setId(Integer id) {
-		this.id = id;
+		this.idd = id;
 	}
 
 	//Para criar os getters e os setters podemos utilizar o atalho da IDE
@@ -118,7 +143,7 @@ public class Produto {
 		if (getClass() != obj.getClass())
 			return false;
 		Produto other = (Produto) obj;
-		return Objects.equals(id, other.id);
+		return Objects.equals(idd, other.id);
 	}
 
 	

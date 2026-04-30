@@ -88,7 +88,7 @@ public class Produto {
 	
 	//Método que define/altera o valor do atributo id
 	public void setId(Integer id) {
-		this.idd = id;
+		this.id = id;
 	}
 
 	//Para criar os getters e os setters podemos utilizar o atalho da IDE
@@ -143,7 +143,7 @@ public class Produto {
 		if (getClass() != obj.getClass())
 			return false;
 		Produto other = (Produto) obj;
-		return Objects.equals(idd, other.id);
+		return Objects.equals(id, other.id);
 	}
 
 	

@@ -101,7 +101,7 @@ public class ProdutoController {
 		
 	}
 	
-	
+	curl -X DELETE http://localhost:8080/produtos/2
 	@DeleteMapping("/produtos/{id}")
 	public ResponseEntity<String> apagarProduto(@PathVariable Integer id) {
 
